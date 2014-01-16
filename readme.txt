@@ -27,6 +27,26 @@ Please Note: The plugin simply converts Gravity Form output to fit with Foundati
 
 If you have any suggestions or bugfixes please checkout the GitHub repo at https://github.com/pressoholics/prso-gravityforms-foundation-5
 
+== Upgrade Notice ==
+
+= 1.0 =
+
+* Initial plugin launch, this is the first version.
+
+== Filter Hooks ==
+
+1. Filter:: 'prso_theme_gform_validation_wrapper_class' 	- change class for div around field validation message
+2. Filter:: 'prso_theme_gform_form_confirmation_class' 	- change class for div around form confirmation message
+3. Filter:: 'prso_theme_gform_form_validation_class' 		- change class for div around form validation message
+4. Filter:: 'prso_theme_gforms_address_city_class' 		- change class for div around city field
+5. Filter:: 'prso_theme_gforms_address_state_class' 		- change class for div around state field
+6. Filter:: 'prso_theme_gforms_address_zip_class' 			- change class for div around zip field
+7. Filter:: 'prso_theme_gforms_website_class' 				- change class for div around website field
+8. Filter:: 'prso_theme_gforms_website_placeholder' 		- change the placeholder value for website input field
+9. Filter:: 'prso_theme_gforms_website_field_class' 		- change class for website field input
+10. Filter:: 'prso_theme_gforms_name_class' 				- change class for div around name fields
+11. Filter:: 'prso_theme_gforms_name_field_class' 			- change class for name field inputs
+
 == Installation ==
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory
@@ -51,18 +71,3 @@ If you have any suggestions or bugfixes please checkout the GitHub repo at https
 
 * Updated code to use Foundation 5 html stucture and CSS classes
 * Added some more Wordpress Filter hooks
-
-== Filter Hooks ==
-
-Hooks:
-* 	Filter:: 'prso_theme_gform_validation_wrapper_class' 	- change class for div around field validation message
-*	Filter:: 'prso_theme_gform_form_confirmation_class' 	- change class for div around form confirmation message
-*	Filter:: 'prso_theme_gform_form_validation_class' 		- change class for div around form validation message
-*	Filter:: 'prso_theme_gforms_address_city_class' 		- change class for div around city field
-*	Filter:: 'prso_theme_gforms_address_state_class' 		- change class for div around state field
-*	Filter:: 'prso_theme_gforms_address_zip_class' 			- change class for div around zip field
-*	Filter:: 'prso_theme_gforms_website_class' 				- change class for div around website field
-*	Filter:: 'prso_theme_gforms_website_placeholder' 		- change the placeholder value for website input field
-*	Filter:: 'prso_theme_gforms_website_field_class' 		- change class for website field input
-*	Filter:: 'prso_theme_gforms_name_class' 				- change class for div around name fields
-*	Filter:: 'prso_theme_gforms_name_field_class' 			- change class for name field inputs
