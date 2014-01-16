@@ -13,6 +13,11 @@
 *	Filter:: 'prso_theme_gforms_address_city_class' 		- change class for div around city field
 *	Filter:: 'prso_theme_gforms_address_state_class' 		- change class for div around state field
 *	Filter:: 'prso_theme_gforms_address_zip_class' 			- change class for div around zip field
+*	Filter:: 'prso_theme_gforms_website_class' 				- change class for div around website field
+*	Filter:: 'prso_theme_gforms_website_placeholder' 		- change the placeholder value for website input field
+*	Filter:: 'prso_theme_gforms_website_field_class' 		- change class for website field input
+*	Filter:: 'prso_theme_gforms_name_class' 				- change class for div around name fields
+*	Filter:: 'prso_theme_gforms_name_field_class' 			- change class for name field inputs
 *
 *
 */
@@ -213,9 +218,9 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 }
 
 /**
-* prso_theme_gform_get_name_field
+* prso_theme_gform_get_website_field
 * 
-* Called by 'prso_theme_gform_get_name_field' in prso_theme_gform_field_content()
+* Called by 'prso_theme_gform_get_website_field' in prso_theme_gform_field_content()
 *
 * Simply rebuilds name field to use a two column layout for first and last name so inputs sit sideby side. 
 *
