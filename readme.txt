@@ -13,11 +13,11 @@ Want to use Gravity Forms with Zurb Foundation 5? Look no further. This plugin f
 
 Want to use Gravity Forms with Zurb Foundation 5? Look no further. This plugin filters form styles to use Foundation 5 right out of the box, including validation.
 
-Complex fields such as Address are broken upto columns to provide a neat field 'bundle' (see screenshots).
+Complex fields such as Address are broken into columns to provide a neat field 'bundle' (see screenshots).
 
 Radio and check lists are formatted as shown in the Foundation 5 docs. Also fields like 'website' make use of the Pre/Postfix labels to add a little Foundation flare.
 
-Validation is also taken care of, making sure to use the form Error States laidout in the Foundation docs.
+Validation is also taken care of, making sure to use the form Error States laid out in the Foundation docs.
 
 There are also a host of Wordpress filters for devs to hook into to alter DOM classes, IDs, and content.
 
