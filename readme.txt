@@ -1,4 +1,4 @@
-=== YOUR PLUGIN NAME HERE by Benjamin Moody ===
+=== Gravity Forms for Zurb Foundation 5 by Benjamin Moody ===
 Contributors: ben.moody
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
