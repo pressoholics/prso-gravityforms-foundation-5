@@ -27,10 +27,35 @@ Please Note: The plugin simply converts Gravity Form output to fit with Foundati
 
 If you have any suggestions or bugfixes please checkout the GitHub repo at https://github.com/pressoholics/prso-gravityforms-foundation-5
 
+== Installation ==
+
+1. Upload the plugin folder to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Frequently Asked Questions ==
+
+== Why doesn't my form look perfect and fit my theme ==
+
+This plugin simply ensures that the form elements make use of Foundation 5 classes and html layout. You will still have to put the finishing touches to your theme's form and field styles.
+
+== Screenshots ==
+
+1. Here is the default Gravity Forms Address field in Foundation 5.
+2. Here is the Address field with Foundation 5 applied.
+3. Here is the Website field without Foundation 5.
+4. The Website field with Foundation 5 applied.
+5. Example of form validation errors.
+6. Example of form success message.
+
+== Changelog ==
+
+= 1.0 =
+* Updated code to use Foundation 5 html stucture and CSS classes
+* Added some more Wordpress Filter hooks
+
 == Upgrade Notice ==
 
 = 1.0 =
-
 * Initial plugin launch, this is the first version.
 
 == Filter Hooks ==
@@ -46,28 +71,3 @@ If you have any suggestions or bugfixes please checkout the GitHub repo at https
 9. Filter:: 'prso_theme_gforms_website_field_class' 		- change class for website field input
 10. Filter:: 'prso_theme_gforms_name_class' 				- change class for div around name fields
 11. Filter:: 'prso_theme_gforms_name_field_class' 			- change class for name field inputs
-
-== Installation ==
-
-1. Upload the plugin folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-
-== Frequently Asked Questions ==
-
-1. Why doesn't my form look perfect and fit my theme? - This plugin simply ensures that the form elements make use of Foundation 5 classes and html layout. You will still have to put the finishing touches to your theme's form and field styles.
-
-== Screenshots ==
-
-1. Here is the default Gravity Forms Address field in Foundation 5.
-2. Here is the Address field with Foundation 5 applied.
-3. Here is the Website field without Foundation 5.
-4. The Website field with Foundation 5 applied.
-5. Example of form validation errors.
-6. Example of form success message.
-
-== Changelog ==
-
-= 1.0 =
-
-* Updated code to use Foundation 5 html stucture and CSS classes
-* Added some more Wordpress Filter hooks
