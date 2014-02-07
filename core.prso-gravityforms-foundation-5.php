@@ -253,7 +253,7 @@ function prso_theme_gform_get_email_field( $field, $value, $lead_id, $form_id ) 
 			<span class="prefix"><?php echo apply_filters( 'prso_theme_gforms_email_prepend', '@', $field, $form_id ); ?></span>
 		</div>
 		<div class="<?php echo apply_filters( 'prso_theme_gforms_email_col_size', 'small-9 large-10', $field, $form_id ); ?> columns">
-			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your URL...', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
+			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your Email address', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
 		</div>
 	</div>
 	<?php
@@ -301,7 +301,7 @@ function prso_theme_gform_get_website_field( $field, $value, $lead_id, $form_id 
 			<span class="prefix"><?php echo apply_filters( 'prso_theme_gforms_website_prepend', 'http://', $field, $form_id ); ?></span>
 		</div>
 		<div class="<?php echo apply_filters( 'prso_theme_gforms_website_col_size', 'small-9 large-10', $field, $form_id ); ?> columns">
-			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your URL...', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
+			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your URL', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
 		</div>
 	</div>
 	<?php
