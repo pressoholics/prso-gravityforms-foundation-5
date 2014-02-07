@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Gravity Forms for Zurb Foundation 5
- * Plugin URI: 
+ * Plugin URI: https://github.com/pressoholics/prso-gravityforms-foundation-5
  * Description: Overrides Gravity Forms style/structure to use Zurb Foundation 5 Framework 
  * Author: Benjamin Moody
  * Version: 1.1
