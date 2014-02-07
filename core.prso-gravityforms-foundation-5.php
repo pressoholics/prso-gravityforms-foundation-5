@@ -145,8 +145,6 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 	
 	if( !is_admin() ) {
 		
-		//Change html content for text input and address fields
-		if( ($field['type'] === 'text') || ($field['type'] === 'address') || ($field['type'] === 'name') || ($field['type'] === 'website') ) {
 			
 			$id = $field["id"];
 			
@@ -191,7 +189,6 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 	            $field_content = sprintf("%s<label class='gfield_label' for='%s'>%s%s</label>%s{FIELD}%s", $admin_buttons, $target_input_id, esc_html($field_label), $required_div , $description, $validation_message);
 	        else
 	            $field_content = sprintf("%s<label class='gfield_label' for='%s'>%s%s</label>{FIELD}%s%s", $admin_buttons, $target_input_id, esc_html($field_label), $required_div , $description, $validation_message);
-	            
 			
 			//Detect if field type is text or address and call the required function to get field content
 			if( $field['type'] === 'address' ) {
@@ -206,11 +203,13 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 				
 				$content = str_replace("{FIELD}", prso_theme_gform_get_website_field($field, $value, 0, $form_id), $field_content);
 				
+			} elseif ( $field['type'] === 'email' ) {
+				
+				$content = str_replace("{FIELD}", prso_theme_gform_get_email_field($field, $value, 0, $form_id), $field_content);
+				
 			} else {
 				$content = str_replace("{FIELD}", GFCommon::get_field_input($field, $value, 0, $form_id), $field_content);
 			}
-	       
-		}
 		
 	}
 	
@@ -218,16 +217,66 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 }
 
 /**
-* prso_theme_gform_get_website_field
+* prso_theme_gform_get_email_field
 * 
-* Called by 'prso_theme_gform_get_website_field' in prso_theme_gform_field_content()
+* Called by 'prso_theme_gform_get_email_field' in prso_theme_gform_field_content()
 *
-* Simply rebuilds name field to use a two column layout for first and last name so inputs sit sideby side. 
+* Simply rebuilds email field to prepend content before the field 
 *
 * Hooks:
 *	Filter:: 'prso_theme_gforms_website_class' 			- change class for div around website field
 *	Filter:: 'prso_theme_gforms_website_placeholder' 	- change the placeholder value for website input field
 *	Filter:: 'prso_theme_gforms_website_field_class' 	- change class for website field input
+*	Filter:: 'prso_theme_gforms_email_prepend_col_size'	- change foundation col size classes
+*	Filter:: 'prso_theme_gforms_email_col_size'	- change foundation col size classes
+*
+* @param	array		field
+* @param	string		value
+* @param	lead_id		int
+* @param	form_id		int
+* @return	string		name fields html
+* @access 	public
+* @author	Ben Moody
+*/
+function prso_theme_gform_get_email_field( $field, $value, $lead_id, $form_id ) {
+	
+	//Init vars
+	$output = NULL;
+	
+	//Cache css id
+	$input_id = str_replace('.', '_', $field['id']);
+	
+	ob_start();
+	?>
+	<div id="input_<?php esc_attr_e( $input_id ); ?>_container" class="<?php echo apply_filters( 'prso_theme_gforms_website_class', 'row collapse', $field, $form_id ); ?>">
+		<div class="<?php echo apply_filters( 'prso_theme_gforms_email_prepend_col_size', 'small-3 large-2', $field, $form_id ); ?> columns">
+			<span class="prefix"><?php echo apply_filters( 'prso_theme_gforms_email_prepend', '@', $field, $form_id ); ?></span>
+		</div>
+		<div class="<?php echo apply_filters( 'prso_theme_gforms_email_col_size', 'small-9 large-10', $field, $form_id ); ?> columns">
+			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your URL...', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
+		</div>
+	</div>
+	<?php
+	$output = ob_get_contents();
+	ob_end_clean();
+	
+	return $output;
+	
+}
+
+/**
+* prso_theme_gform_get_website_field
+* 
+* Called by 'prso_theme_gform_get_website_field' in prso_theme_gform_field_content()
+*
+* Simply rebuilds website field to prepend content before the field 
+*
+* Hooks:
+*	Filter:: 'prso_theme_gforms_website_class' 			- change class for div around website field
+*	Filter:: 'prso_theme_gforms_website_placeholder' 	- change the placeholder value for website input field
+*	Filter:: 'prso_theme_gforms_website_field_class' 	- change class for website field input
+*	Filter:: 'prso_theme_gforms_website_prepend_col_size'	- change foundation col size classes
+*	Filter:: 'prso_theme_gforms_website_col_size'			- change foundation col size classes
 *
 * @param	array		field
 * @param	string		value
@@ -248,10 +297,10 @@ function prso_theme_gform_get_website_field( $field, $value, $lead_id, $form_id 
 	ob_start();
 	?>
 	<div id="input_<?php esc_attr_e( $input_id ); ?>_container" class="<?php echo apply_filters( 'prso_theme_gforms_website_class', 'row collapse', $field, $form_id ); ?>">
-		<div class="small-3 large-2 columns">
-			<span class="prefix">http://</span>
+		<div class="<?php echo apply_filters( 'prso_theme_gforms_website_prepend_col_size', 'small-3 large-2', $field, $form_id ); ?> columns">
+			<span class="prefix"><?php echo apply_filters( 'prso_theme_gforms_website_prepend', 'http://', $field, $form_id ); ?></span>
 		</div>
-		<div class="small-9 large-10 columns">
+		<div class="<?php echo apply_filters( 'prso_theme_gforms_website_col_size', 'small-9 large-10', $field, $form_id ); ?> columns">
 			<input id="input_<?php esc_attr_e( $input_id ); ?>" type="text" placeholder="<?php echo apply_filters( 'prso_theme_gforms_website_placeholder', 'Enter your URL...', $field, $form_id ); ?>" tabindex="<?php esc_attr_e( $field['id'] ); ?>" name="input_<?php esc_attr_e($input['id']); ?>" class="<?php echo apply_filters( 'prso_theme_gforms_website_field_class', 'placeholder', $field, $form_id ); ?>">
 		</div>
 	</div>

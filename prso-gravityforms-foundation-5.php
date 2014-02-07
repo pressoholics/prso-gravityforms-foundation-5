@@ -4,7 +4,7 @@
  * Plugin URI: 
  * Description: Overrides Gravity Forms style/structure to use Zurb Foundation 5 Framework 
  * Author: Benjamin Moody
- * Version: 1.0
+ * Version: 1.1
  * Author URI: http://www.benjaminmoody.com
  * License: GPL v3
  * Text Domain: prso-gravityforms-foundation-5-plugin

@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: gravity forms, zurb, foundation, zurb foundation, foundation 5, zurb foundation 5
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.1
 
 Want to use Gravity Forms with Zurb Foundation 5? Look no further. This plugin filters form styles to use Foundation 5 out of the box, inc validation.
 
@@ -49,6 +49,11 @@ This plugin simply ensures that the form elements make use of Foundation 5 class
 
 == Changelog ==
 
+= 1.1 =
+* Validation now effects all form fields
+* Added style for Email field
+* Added new filters for both website and email field column classes
+
 = 1.0 =
 * Updated code to use Foundation 5 html stucture and CSS classes
 * Added some more Wordpress Filter hooks
@@ -71,3 +76,8 @@ This plugin simply ensures that the form elements make use of Foundation 5 class
 9. Filter:: 'prso_theme_gforms_website_field_class' 		- change class for website field input
 10. Filter:: 'prso_theme_gforms_name_class' 				- change class for div around name fields
 11. Filter:: 'prso_theme_gforms_name_field_class' 			- change class for name field inputs
+12.	Filter:: 'prso_theme_gforms_email_prepend_col_size'	- change foundation col size classes
+13.	Filter:: 'prso_theme_gforms_email_col_size'	- change foundation col size classes
+14.	Filter:: 'prso_theme_gforms_website_prepend_col_size'	- change foundation col size classes
+15.	Filter:: 'prso_theme_gforms_website_col_size'			- change foundation col size classes
+16. See 'core.prso-garvityforms-foundation-5.php' for all filters/actions used
